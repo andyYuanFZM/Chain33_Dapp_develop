@@ -25,4 +25,4 @@
     功能特性： 支持跨链，零知识证明，以太坊兼容
 
 ###  3.DAPP应用常用架构
-![avatar](./resource/L1.png)
+![avatar](../resource/L1.png)
