@@ -18,14 +18,14 @@ npm install web3
 ### 3. web3.js常用查询  
  - web3.js中文文档： https://learnblockchain.cn/docs/web3.js/  
 
- 适用于chain33的常用查询接口
-  // Web3库自身信息查询
+ 适用于chain33的常用查询接口   
+  // Web3库自身信息查询  
   - Web3.modules: 返回包含所有子模块类的对象，主要用到Eth，Net，Personal子模块，Shh, Bzz这些用不上
     - Eth: 用来和区块链网络交互
     - Net: 网络属性相关
     - Persion: 区块链账户相关
-  - Web3.version: 所引用的Web3的版本号
-  // 区块链返回
+  - Web3.version: 所引用的Web3的版本号  
+  // 区块链返回  
   - web3.eth.getChainId(): 返回区块链节点的chainid
   - web3.eth.net.getId(): 获取当前网络的ID
   - web3.eth.net.isListening(): 当前节点是否处于监听连接状态，是的话返回true
