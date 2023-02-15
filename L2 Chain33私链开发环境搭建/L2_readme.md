@@ -3,9 +3,9 @@
 可以进行快速验证，节省时间和成本。
 
 ### 2.环境准备：
-准备一台Window，Linux或Mac的机器
-golang 1.17+：  下载地址：https://go.dev/dl/
-Git 工具
+准备一台Window，Linux或Mac的机器  
+golang 1.17+：  下载地址：https://go.dev/dl/  
+Git 工具  
 
 ### 3.下载代码
 ```  
