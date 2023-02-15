@@ -1,17 +1,17 @@
-## 一.L1 Chain33 DAPP开发简介
+## L1 Chain33 DAPP开发简介
 
 ### 1.课程整体目录
-    - Chain33 DAPP 开发概念介绍
-    - Chain33 私链开发环境搭建
-    - Chain33 DAPP开发工具和框架简介
-    - Web3.js 和chain33区块链交互
-    - Ethers.js和Chain33区块链交互
-    - web3J-sdk 和Chain33区块链交互
-    - go-ethereum 和Chain33区块链交互
-    - 使用Truffle框架在Chain33上做开发
-    - 使用HardHat框架在Chain33上做开发
-    - Chain33上DAPP应用开发实例（前端开发, 合约开发）
-    - 其它
+ - Chain33 DAPP 开发概念介绍
+ - Chain33 私链开发环境搭建
+ - Chain33 DAPP开发工具和框架简介
+ - Web3.js 和chain33区块链交互
+ - Ethers.js和Chain33区块链交互
+ - web3J-sdk 和Chain33区块链交互
+ - go-ethereum 和Chain33区块链交互
+ - 使用Truffle框架在Chain33上做开发
+ - 使用HardHat框架在Chain33上做开发
+ - Chain33上DAPP应用开发实例（前端开发, 合约开发）
+ - 其它
 
 ###  2. 什么是Chain33
     开源地址：
