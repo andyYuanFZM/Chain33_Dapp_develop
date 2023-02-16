@@ -30,7 +30,8 @@ var web3 = new Web3(new Web3.providers.HttpProvider("区块链接口"));
    - Net: 网络属性相关
    - Persion: 区块链账户相关
  - Web3.version: 所引用的Web3的版本号  
-
+ - web3.currentProvider：返回当前通信服务提供器
+ - web3.eth.currentProvider：同上，chain33兼容eth的连接
  - web3.eth.getChainId(): 返回区块链节点的chainid
  - web3.eth.net.getId(): 获取当前网络的ID
  - web3.eth.net.isListening(): 当前节点是否处于监听连接状态，是的话返回true
