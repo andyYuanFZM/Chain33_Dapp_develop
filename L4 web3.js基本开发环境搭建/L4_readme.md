@@ -40,7 +40,7 @@ var web3 = new Web3(new Web3.providers.HttpProvider("区块链接口"));
  - web3.eth.getAccounts():  返回当前节点控制的账户，如果没有账户则返回：ErrAccountNotExist
  - web3.eth.getBlockNumber():  返回当前最大的区块高度
  - web3.eth.getBalance("用户地址"): 返回用户地址下的余额， 精度10的18次方
- - web3.eth.getBlock("区块高度/区块hash值"): 返回区块信息
+ - web3.eth.getBlock("区块高度/区块hash值", true/false): 返回区块信息,true/false: 要不要带交易详情
  - web3.eth.getBlockTransactionCount(区块高度): 返回对应区块中交易数量
  - web3.eth.getTransaction("交易hash"): 返回对应交易hash的交易对象
  - web3.eth.getTransactionReceipt("交易hash"): 返回交易收据
