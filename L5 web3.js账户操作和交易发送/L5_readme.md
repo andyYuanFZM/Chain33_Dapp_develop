@@ -21,6 +21,6 @@
 方式一（不推荐）：使用保存在节点上的私钥签名并发送交易上链。  私钥存在节点上不是安全的做法，容易导致私钥泄漏。   
 方式二（推荐）： 利用私钥在链下签名，签名完成后再通过接口发送到区块链上。  
 
-- web3.eth.accounts.signTransaction： 本地签名交易
+- web3.eth.accounts.signTransaction： 本地（链下）签名交易
 - web3.eth.sendSignedTransaction： 发送已经签好名的交易到区块链上
 
