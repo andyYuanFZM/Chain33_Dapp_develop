@@ -35,11 +35,11 @@ var web3 = new Web3(new Web3.providers.HttpProvider("区块链接口"));
  - web3.eth.getChainId(): 返回区块链节点的chainid
  - web3.eth.net.getId(): 获取当前网络的ID
  - web3.eth.net.isListening(): 当前节点是否处于监听连接状态，是的话返回true
+ - web3.eth.net.getPeerCount(): 获取对等节点的数量
+ - web3.eth.net.isListening(): 当前节点是否处于监听连接状态，是的话返回true
  - web3.eth.getHashrate():  返回区块的difficulty值
  - web3.eth.getGasPrice():  返回当前gas价格
- - web3.eth.getAccounts():  返回当前节点控制的账户，如果没有账户则返回：ErrAccountNotExist
  - web3.eth.getBlockNumber():  返回当前最大的区块高度
- - web3.eth.getBalance("用户地址"): 返回用户地址下的余额， 精度10的18次方
  - web3.eth.getBlock("区块高度/区块hash值", true/false): 返回区块信息,true/false: 要不要带交易详情
  - web3.eth.getBlockTransactionCount(区块高度): 返回对应区块中交易数量
  - web3.eth.getTransaction("交易hash"): 返回对应交易hash的交易对象
