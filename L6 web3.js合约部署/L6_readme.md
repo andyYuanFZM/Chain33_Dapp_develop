@@ -41,8 +41,8 @@ contract MyERC1155 is ERC1155, Ownable {
 
 ### 2. 合约编译
 编译工具: 
-- 1. [[在线remix]](https://remix.ethereum.org/)
-- 2. solc工具
+- [[在线remix]](https://remix.ethereum.org/)
+- solc工具
 
 编译结果
 - 字节码(bytecode): 是solidity代码被翻译以后的信息，包含了二进制的计算机指令。
