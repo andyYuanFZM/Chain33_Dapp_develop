@@ -13,7 +13,7 @@ const deploy = async () => {
   
     const contractdeploy = contract.deploy({
       data: bytecode,
-      arguments: ["init ERC1155 contract"],
+      arguments: ["aivr NFT"],
     });
 
 const createTransaction = await web3.eth.accounts.signTransaction(
