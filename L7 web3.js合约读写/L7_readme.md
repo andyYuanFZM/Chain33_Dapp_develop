@@ -5,8 +5,9 @@
 - 定义发行通证用户的私钥（privatekey）
 - 从合约部署流程中，获得合约地址（contractAddress）
 - 使用web3.eth.Contract函数并传入abi和contractAddress创建合约实例
-- 通过合约实例使用methods.mint函数并传入（tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; URI: 通证元数据信息）作为输入值来生成通证
-  uri: 通证元数据信息，URI标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下给出一个示例，但实际的URI格式各有区别，具体取决于通证发者的需求。
+- 通过合约实例使用methods.mint函数并传入（tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; uri: 通证元数据信息）作为输入值来生成通证  
+  uri: 通证元数据信息，URI标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata  
+  以下是一个uri示例，但实际的URI格式各有区别，具体取决于通证发者的需求。 
 ```  
 {
   "name": "MyToken",  -- 通证名称
@@ -25,7 +26,7 @@
   ]
 }
 ```  
-
+mint函数调用流程  
 ```  
 // 1. 读取ABI文件
 var abi = JSON.parse(fs.readFileSync(path.join(__dirname, "../contract.abi")).toString())
@@ -60,6 +61,7 @@ mint();
 - 通过合约实例使用methods.safeTransferFrom函数并传入参数(from: 通证来源方地址; to: 通证去向方地址: id: 通证ID, amount: 要转移的通证数量)来生成转移通证的交易
 - 再通过from地址的私钥，签名上述交易并发送到链上，实现通证转移
 
+transfer函数调用流程  
 ```  
 // 转账操作
 var transferTx = tx.methods.safeTransferFrom("来源地址", "去向地址", 通证ID, 转让数量, "0x");
