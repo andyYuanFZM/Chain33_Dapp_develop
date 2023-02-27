@@ -49,6 +49,7 @@ contract MyERC1155 is ERC1155, Ownable {
 - ABI: 应用程序二进制接口,以json文件表示。
 
 ### 3. 合约部署
+可以查看此目录下的完整脚本： L6_sample.js  
 涉及到的接口:
 - eth.web3.estimateGas({"from address"}): 估算交易的GAS费, from address是必须的参数
 - web3.eth.Contract(abi): 自动将所有的调用转换为基于 RPC 的底层 ABI 调用 
