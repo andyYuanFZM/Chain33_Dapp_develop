@@ -5,9 +5,7 @@
 - 定义发行通证用户的私钥（privatekey）
 - 从合约部署流程中，获得合约地址（contractAddress）
 - 使用web3.eth.Contract函数并传入abi和contractAddress创建合约实例
-- 通过合约实例使用methods.mint函数并传入（tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; uri: 通证元数据信息）作为输入值来生成通证  
-  uri: 通证元数据信息，URI标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata  
-  以下是一个uri示例，但实际的URI格式各有区别，具体取决于通证发者的需求。 
+- 通过合约实例使用methods.mint函数并传入以下三个参数(tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; uri: 通证元数据信息）。 其中uri代表通证元数据信息，它的标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下是一个uri示例，但实际的URI格式各有区别，具体取决于通证发者的需求。 
 ```  
 {
   "name": "MyToken",  -- 通证名称
