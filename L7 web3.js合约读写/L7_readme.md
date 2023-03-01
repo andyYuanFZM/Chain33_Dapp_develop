@@ -6,7 +6,7 @@
 - 从合约部署流程中，获得合约地址（contractAddress）
 - 使用web3.eth.Contract函数并传入abi和contractAddress创建合约实例
 - 通过合约实例使用methods.mint函数并传入（tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; URI: 通证元数据信息）作为输入值来生成通证
-  uri: 通证元数据信息，URI标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下给出一个示例，但实际的URI格式各有区别，具体取决于通证发者的需求。
+  uri: 通证元数据信息，URI标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下给出一个示例，但实际的URI格式各有区别，具体取决于通证发行者的需求。
 ```  
 {
   "name": "MyToken",  -- 通证名称
