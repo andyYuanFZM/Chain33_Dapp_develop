@@ -2,28 +2,6 @@
 
 ### 1. 向合约内写入数据
 #### 通证mint
-- 定义发行通证用户的私钥（privatekey）
-- 从合约部署流程中，获得合约地址（contractAddress）
-- 使用web3.eth.Contract函数并传入abi和contractAddress创建合约实例
-- 通过合约实例使用methods.mint函数并传入以下三个参数(tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; uri: 通证元数据信息）。 其中uri代表通证元数据信息，它的标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下是一个uri示例，但实际的URI格式各有区别，具体取决于通证发行者的需求。 
-```  
-{
-  "name": "MyToken",  -- 通证名称
-  "description": "My custom ERC1155 token",  -- 通证的描述
-  "image": "https://example.com/token-image.png",  -- 通证图像的URL
-  "external_url": "https://example.com/token",  -- 指向通证相关网站的URL，没有的话，这个字段可以删除
-  "attributes": [                               -- 通证的属性数组
-    {
-      "trait_type": "color",  -- 属性的类型
-      "value": "blue"         -- 属性的值
-    },
-    {
-      "trait_type": "size",
-      "value": "medium"
-    }
-  ]
-}
-```  
 mint函数调用流程  
 ```  
 // 1. 读取ABI文件
@@ -53,6 +31,26 @@ const mint = async () => {
   console.log(createReceipt);
 };
 mint();
+```  
+
+mint函数并传入以下三个参数(tokenId: 通证的编号，用整数表示; supply: 通证的供应量，整数; uri: 通证元数据信息）。 其中uri代表通证元数据信息，它的标准参考： https://eips.ethereum.org/EIPS/eip-1155#metadata, 以下是一个uri示例，但实际的URI格式各有区别，具体取决于通证发行者的需求。 
+```  
+{
+  "name": "MyToken",  -- 通证名称
+  "description": "My custom ERC1155 token",  -- 通证的描述
+  "image": "https://example.com/token-image.png",  -- 通证图像的URL
+  "external_url": "https://example.com/token",  -- 指向通证相关网站的URL，没有的话，这个字段可以删除
+  "attributes": [                               -- 通证的属性数组
+    {
+      "trait_type": "color",  -- 属性的类型
+      "value": "blue"         -- 属性的值
+    },
+    {
+      "trait_type": "size",
+      "value": "medium"
+    }
+  ]
+}
 ```  
 
 #### 通证tranfer
