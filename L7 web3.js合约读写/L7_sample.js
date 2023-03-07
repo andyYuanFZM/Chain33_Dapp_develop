@@ -2,11 +2,11 @@ var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.3.158:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://172.22.16.19:8545"));
 
 var abi = JSON.parse(fs.readFileSync(path.join(__dirname, "../L6 web3.js合约部署/contract.abi")).toString())
 
-var contractAddress = '合约地址';
+var contractAddress = '0x61b35E8804F87589fBb7da3A6B68c563C05Bb2f1';
 
 var tx = new web3.eth.Contract(abi, contractAddress);
 
@@ -36,25 +36,25 @@ const mint = async () => {
 mint();
 
 // 转账操作
-var transferTx = tx.methods.safeTransferFrom("0x4797A444f34C26e71803A1d98D5031a3cAE70650", "0x643c5aDdDDBF2734B8896AA74C38FfAb6723Cbf1", tokenId, 3, "0x");
+// var transferTx = tx.methods.safeTransferFrom("0x4797A444f34C26e71803A1d98D5031a3cAE70650", "0x643c5aDdDDBF2734B8896AA74C38FfAb6723Cbf1", tokenId, 1, "0x");
 
-const transfer = async () => {
+// const transfer = async () => {
 
-  const transferTransaction = await web3.eth.accounts.signTransaction(
-    {
-      to: contractAddress,
-      data: transferTx.encodeABI(),
-      gas: await transferTx.estimateGas({from: "0x4797A444f34C26e71803A1d98D5031a3cAE70650"}),
-    },
-    "0x76491916cf0e70437cbed8c2ce9ac2241221e56f8e64ec74e3282b07f24018e1"
-  );
+//   const transferTransaction = await web3.eth.accounts.signTransaction(
+//     {
+//       to: contractAddress,
+//       data: transferTx.encodeABI(),
+//       gas: await transferTx.estimateGas({from: "0x4797A444f34C26e71803A1d98D5031a3cAE70650"}),
+//     },
+//     "0x76491916cf0e70437cbed8c2ce9ac2241221e56f8e64ec74e3282b07f24018e1"
+//   );
 
-  const createReceipt = await web3.eth.sendSignedTransaction(transferTransaction.rawTransaction);
-  console.log("通证transfer完成");
-  console.log(createReceipt);
-};
+//   const createReceipt = await web3.eth.sendSignedTransaction(transferTransaction.rawTransaction);
+//   console.log("通证transfer完成");
+//   console.log(createReceipt);
+// };
 
-transfer();
+// transfer();
 
 // // 查询操作
 // const getInfo = async () => {
