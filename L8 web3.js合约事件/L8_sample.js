@@ -1,3 +1,4 @@
+// 历史时间查询测试程序
 var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');
@@ -33,12 +34,15 @@ const mint = async () => {
   console.log(createReceipt.logs);
 };  
 
-// mint();
+mint();
 
 // 查询合约日志
-web3.eth.getPastLogs({
-    address: contractAddress,
-    topics: ['0x30b042f6d29a39b7c10c2dfbd81016db37ea3d11e72ec5764fb0d0f7a1012a3a'],
-    fromBlock: 79,
-})
-.then(console.log);
+// var eventName = 'TokenMinted(uint256,uint256,string)'
+// var topic = web3.eth.abi.encodeEventSignature(eventName);
+// console.log(topic)
+// web3.eth.getPastLogs({
+//     address: contractAddress,
+//     topics: [topic],
+//     fromBlock: 1,
+// })
+// .then(console.log);

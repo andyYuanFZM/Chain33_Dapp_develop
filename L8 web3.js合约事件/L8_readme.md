@@ -79,3 +79,9 @@ web3.eth.subscribe('logs', {
     console.log(`Subscribed with ID: ${subscriptionId}`);
   });
 ```  
+
+### 3. 根据事件签名计算topics的值
+```  
+var eventName = 'TokenMinted(uint256,uint256,string)'
+var topic = web3.eth.abi.encodeEventSignature(eventName)
+```  
