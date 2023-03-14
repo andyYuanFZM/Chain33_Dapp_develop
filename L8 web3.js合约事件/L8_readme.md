@@ -22,8 +22,8 @@ function mint(uint256 tokenId, uint256 supply, string memory uri) public onlyOwn
 
 通过监听事件，应用程序可以自动更新状态或响应合约的状态变化，这使得合约更加灵活和可扩展。
 
-### 1. 查询合约历史事件
-web3.eth.getPastLogs()
+### 1. 查询合约历史事件  
+web3.eth.getPastLogs()  
 过滤器对象：
 - fromBlock: 起始区块（最小值支持从1开始）
 - toBlock: 终止区块， 这个参数不带代表一直到最大区块
@@ -58,8 +58,8 @@ web3.eth.getPastLogs({
 ]
 ```  
 
-### 2. 订阅区块链中的指定事件
-web3.eth.subscribe(type [, options] [, callback]);
+### 2. 订阅区块链中的指定事件  
+web3.eth.subscribe(type [, options] [, callback]);  
 - String - 订阅类型
 - Mixed - (可选) 依赖于订阅类型的可选额外参数
 - Function - (可选) 可选的回调函数，其第一个参数为错误对象，第二个参数为结果
@@ -80,7 +80,7 @@ web3.eth.subscribe('logs', {
   });
 ```  
 
-### 3. 根据事件签名计算topics的值
+### 3. 根据事件签名计算topics的值  
 ```  
 var eventName = 'TokenMinted(uint256,uint256,string)'
 var topic = web3.eth.abi.encodeEventSignature(eventName)
