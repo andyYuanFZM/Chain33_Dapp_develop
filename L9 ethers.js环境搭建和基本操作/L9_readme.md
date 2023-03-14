@@ -27,7 +27,7 @@ console.log(`区块高度：${blocknumber}`)
 const balance = await provider.getBalance("0x4797A444f34C26e71803A1d98D5031a3cAE70650")
 
 // 格式化账户余额
-const balanceformat = formatEther(balance)
+const balanceformat = ethers.utils.formatEther(balance)
 console.log(`账户余额：${balanceformat}`)  
 
 // 获得账户交易数
