@@ -1,4 +1,4 @@
-// 事件监听测试程序
+// 事件监听测试
 var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');

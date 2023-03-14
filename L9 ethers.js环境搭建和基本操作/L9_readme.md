@@ -92,7 +92,7 @@ console.log(code)
     provider.sendTransaction(signedTx)
  ```  
 
- ### 3 ethers.js发送转账交易(metamask)
+ ### 4 ethers.js发送转账交易(metamask)
  1. 导入ethers.js
   ```  
  <script src="https://cdn.ethers.io/lib/ethers-5.5.2.umd.min.js"></script>
