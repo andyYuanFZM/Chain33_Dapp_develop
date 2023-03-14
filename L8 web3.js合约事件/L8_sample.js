@@ -3,7 +3,7 @@ var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://172.22.16.19:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
 var abi = JSON.parse(fs.readFileSync(path.join(__dirname, "../L6 web3.js合约部署/contract.abi")).toString())
 
