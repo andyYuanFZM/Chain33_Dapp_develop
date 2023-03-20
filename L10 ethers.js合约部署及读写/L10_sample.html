@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>合约部署和调用</title>
+  <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+</head>
+<body>
+  <h1>合约部署和调用</h1>
+
+  <div>
+    <label>Chain33地址: </label><span id="address"></span>
+    <label style="margin-bottom:20px">地址资产余额: </label><span id="balance"></span>
+
+    <label for="bytecodeFile" styles="margin:0 auto">Bytecode文件：</label>
+    <input type="file" id="bytecodeFile" accept=".code" styles="margin:0 auto"/>
+  
+    <label for="abiFile" styles="margin:0 auto">ABI文件：</label>
+    <input type="file" id="abiFile" accept=".abi" styles="margin:0 auto"/>
+    
+    <button id="deploy-contract" style="background-color:green">加载并部署合约</button>
+    <label></label>
+
+    <label for="contract-address">合约地址:</label>
+    <input type="text" id="contract-address" width="400px">
+
+    <label for="function-name">合约方法:</label>
+    <input type="text" id="function-name">
+
+    <label for="function-args">合约参数:</label>
+    <input type="text" id="function-args">
+
+    <button id="call-contract" style="background-color:blue">调用合约</button>
+    <label></label>
+
+    <label for="output">输出结果:</label>
+    <textarea class="comments" id="output" rows=30  name=s1   cols=100   onpropertychange= "this.style.posHeight=this.scrollHeight "></textarea>
+  </div>
+
+  <script>
+     window.addEventListener('load', async () => {
+        // Wait for MetaMask to be installed
+        if (typeof window.ethereum === 'undefined') {
+          alert('Please install MetaMask first.');
+          return;
+        }
+
+        // Request account access from MetaMask
+        await window.ethereum.enable();
+
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+
+        let abi;
+
+        // Get the user's Ethereum address
+        const address = await signer.getAddress();
+        document.getElementById('address').innerHTML = address;
+
+        const balance = await provider.getBalance(address)
+        // 格式化账户余额
+        const balanceformat = ethers.utils.formatEther(balance)
+        document.getElementById('balance').innerHTML = balanceformat;
+
+        const deployButton = document.getElementById('deploy-contract');
+
+        deployButton.onclick = async () => {
+            const bytecodeFile = document.getElementById("bytecodeFile").files[0];
+            const abiFile = document.getElementById("abiFile").files[0];
+
+            if (!bytecodeFile || !abiFile) {
+                alert("请上传bytecode和abi文件！");
+                return;
+            }
+
+            const bytecode = await readUploadedFileAsText(bytecodeFile);
+            abi = await readUploadedFileAsText(abiFile);
+
+            const contract = new ethers.ContractFactory(abi, bytecode, signer);
+            const tx = await contract.deploy("init ERC1155 tokens");
+            console.log('Contract address:', tx.address);
+            document.getElementById('contract-address').value = tx.address;
+        };
+
+        const callButton = document.getElementById('call-contract');
+        callButton.onclick = async () => {
+            const functionName = document.getElementById('function-name').value;
+             
+            const functionArgs = document.getElementById('function-args').value.split(',');
+
+            const contractAddress = document.getElementById('contract-address').value;
+
+            // 创建合约对象
+            const contract = new ethers.Contract(contractAddress, abi, signer);
+
+            const result = await contract[functionName](...functionArgs);
+            console.log('Result:', result);
+            document.getElementById('output').value = JSON.stringify(result);
+        };
+
+        // 读取上传文件
+        function readUploadedFileAsText(file) {
+            const reader = new FileReader();
+
+            return new Promise((resolve, reject) => {
+            reader.onerror = () => {
+                reader.abort();
+                reject(new Error("文件读取失败。"));
+            };
+
+            reader.onload = () => {
+                resolve(reader.result);
+            };
+
+            reader.readAsText(file);
+            });
+        }
+        });
+  </script>
+</body>
+
+<style>
+div {
+  display: grid;
+  grid-template-columns: 150px 500px;
+}
+</style>
+</html>

@@ -46,7 +46,7 @@ console.log(code)
 
 }
 
-get()
+// get()
 
 async function transfer() {
     // 发送方私钥
@@ -78,4 +78,4 @@ async function transfer() {
     provider.sendTransaction(signedTx)
 }
 
-// transfer()
+transfer()
