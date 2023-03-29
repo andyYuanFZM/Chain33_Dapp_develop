@@ -18,7 +18,7 @@ const iface = new ethers.utils.Interface(abi);
 const eventName = "TokenMinted";
 const eventArgs = [{name: "tokenId", type: "uint256"}, {name: "supply", type: "uint256"},{name: "uri", type: "string"}];
 
-const eventTopic = iface.getEventTopic(eventName, eventArgs);
+const eventTopic = iface.getEventTopic(eventName, eventArgs);  
 console.log(eventTopic)
 
 // 方法二：
@@ -39,7 +39,7 @@ const filter = {
   console.log(logs);
 }
 
-//  getLogs()
+// getLogs()
 
  // websocket连接
  const providerWs = new ethers.providers.WebSocketProvider('ws://localhost:8546');
@@ -54,5 +54,6 @@ function listen() {
         console.log(`TokenMinted event received for ${tokenId}，supply: ${supply}, uri: ${uri}`);
     });
 }
+
 
 listen()
