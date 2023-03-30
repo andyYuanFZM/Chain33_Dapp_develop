@@ -111,6 +111,8 @@ public class L12
         String tx = gson.toJson(ethSendTransaction);
         System.out.println(tx);
 
+        Thread.sleep(5000);
+
         // 再次查询账户余额
         balance = web3.ethGetBalance("0x4797A444f34C26e71803A1d98D5031a3cAE70650", DefaultBlockParameterName.LATEST).send().getBalance();
         balanceStr = Convert.fromWei(balance.toString(), Convert.Unit.ETHER).toString();
