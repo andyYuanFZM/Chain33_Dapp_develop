@@ -26,7 +26,7 @@ mvn -version
 <dependency>
     <groupId>org.web3j</groupId>
     <artifactId>core</artifactId>
-    <version>5.0.0</version>
+    <version>4.9.7</version>
 </dependency>
 <!-- gson库 -->
 <dependency>
