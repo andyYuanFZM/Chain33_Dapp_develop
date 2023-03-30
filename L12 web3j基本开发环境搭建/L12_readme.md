@@ -6,16 +6,16 @@
 ```  
 java -version
 ```  
-
- - 安装Visual Studio Code
-
  - 安装 Maven， Maven是一个用于构建Java项目的工具。可以从Maven官网下载并安装它
 ```  
 mvn -version
 ```  
-
- - 在vs code中安装Extension Pack for Java插件, 该插件包括许多有用的Java开发工具，如语法高亮、代码自动完成和调试支持等。
-
+ - 安装Visual Studio Code 
+ - 在vs code中安装以下插件：
+   Extension Pack for Java: 该插件包括许多有用的Java开发工具，如语法高亮、代码自动完成和调试支持等。
+   Maven for Java: 支持从Maven原型生成项目， 支持产生有效的POM等
+   Debugger for Java: 支持Java的调试
+   
  - 创建maven项目， 
  在VS Code中，右键"Create Maven Project",  再输入group id, artifact id等
 
