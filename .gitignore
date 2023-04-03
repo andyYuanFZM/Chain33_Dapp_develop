@@ -1,6 +1,7 @@
 node_modules
 package-lock.json
 package.json
+target
 
 pnpm-debug.log*
 
@@ -12,3 +13,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+*.class
+*.jar
