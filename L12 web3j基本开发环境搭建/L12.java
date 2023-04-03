@@ -95,7 +95,7 @@ public class L12
         // 3. 手续费
         EthGasPrice ethGasPrice = web3.ethGasPrice().sendAsync().get();
         BigInteger gasPrice = ethGasPrice.getGasPrice();
-        // 注意手续费的设置，这块很容易遇到问题
+        // 注意手续费的设置
         BigInteger gasLimit = BigInteger.valueOf(60000L);
         // 转账地址
         String to = "0xFd89C32962f19bcEA69B76093a64A03618cB33BE";
