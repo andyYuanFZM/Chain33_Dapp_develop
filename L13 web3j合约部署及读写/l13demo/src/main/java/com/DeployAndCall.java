@@ -95,7 +95,7 @@ public class DeployAndCall
        // 获取nonce
        BigInteger nonce = web3.ethGetTransactionCount("0x4797A444f34C26e71803A1d98D5031a3cAE70650", DefaultBlockParameterName.LATEST).send().getTransactionCount();
 
-       // 3. 手续费
+       // 手续费
        EthGasPrice ethGasPrice = web3.ethGasPrice().sendAsync().get();
        BigInteger gasPrice = ethGasPrice.getGasPrice();
        BigInteger gasLimit = BigInteger.valueOf(5000000L);
