@@ -2,7 +2,7 @@
 
 ### 1.环境准备
 
- - 安装 golang 1.18+
+ - 安装 golang 1.18+，下载地址： https://go.dev/dl/  
 ```  
 go version
 ```  
