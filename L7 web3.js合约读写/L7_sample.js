@@ -10,8 +10,8 @@ var contractAddress = '0x59b34dd4c55b62ed3b6f46140805235f3d841366';
 
 var tx = new web3.eth.Contract(abi, contractAddress);
 
-var tokenId = 10002
-var supply = 11
+var tokenId = 10005
+var supply = 19
 var uri = "http://121.52.224.91:9000/chain33/aivr.json"
 
 // mint操作

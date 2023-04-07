@@ -37,20 +37,20 @@ public class FilterAndEvent {
                 new TypeReference<Utf8String>() {}));
 
         // 获取智能合约的历史日志
-        getHistoryLog(web3j, contractAddress, event);
+        // getHistoryLog(web3j, contractAddress, event);
 
-        // WebSocketService webSocketService = new WebSocketService("ws://localhost:8546", true);
-        // webSocketService.connect();
+        WebSocketService webSocketService = new WebSocketService("ws://localhost:8546", true);
+        webSocketService.connect();
         
-        // Web3j web3jws = Web3j.build(webSocketService);
+        Web3j web3jws = Web3j.build(webSocketService);
 
-        // // 事件监听
-        // eventListener(web3jws, contractAddress, event);
+        // 事件监听
+        eventListener(web3jws, contractAddress, event);
 
-        // // 等待事件触发
-        // Thread.sleep(100000);
+        // 等待事件触发
+        Thread.sleep(100000);
 
-        // webSocketService.close();
+        webSocketService.close();
         
     }
 
@@ -79,7 +79,16 @@ public class FilterAndEvent {
         List<EthLog.LogResult> resultList = log.getLogs();
         for (EthLog.LogResult result : resultList) {
             EthLog.LogObject logObject = (EthLog.LogObject) result.get();
-            System.out.println("Received log: " + logObject.toString());
+            System.out.println("Received log: " + logObject.toString() + "\r\n");
+
+            // 获取topic
+            List<String> topics = logObject.getTopics();
+            System.out.println("topic is: " + topics  + "\r\n");
+
+            // 解码非index参数
+            List<Type> results = FunctionReturnDecoder.decode(logObject.getData(), event.getNonIndexedParameters());
+            BigInteger value = (BigInteger) results.get(0).getValue();
+            System.out.println("supply is: " +  value);
         }
     }
 
