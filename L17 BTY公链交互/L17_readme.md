@@ -56,8 +56,9 @@ web3j本身接口不止以下这些，但并不是所有接口都适用于BTY，
  - Credentials.create("用户私钥").getAddress()： 获取用户地址
  - Convert.toWei("转账数量", Convert.Unit.ETHER).toBigInteger()： 格式化转帐金额 (bty-->wei)
  - RawTransaction.createEtherTransaction(nonce, gasPrice, gasLimit, to, value)： 创建交易对象
- - TransactionEncoder.signMessage(交易对象, chainid, 转账凭证)： 签名交易
- - web3.ethSendRawTransaction()： 交易上链
+ - TransactionEncoder.signMessage(交易对象, chainid, 转账凭证)： 签名交易 
+ - web3.ethSendRawTransaction()： 交易上链  
+
  注意事项： BTY原来采用的是BTC的地址格式，如果资产在BTC地址格式下， 同样可以通过使用该地址的私钥签名，转给以太坊格式的地址（0x）开头。 
 
  使用参考：
@@ -181,7 +182,3 @@ public class L17
 }
 
  ```  
-
- 
- 
-
