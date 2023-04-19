@@ -43,8 +43,8 @@ web3j是为JAVA语言提供的SDK
 </dependency>
 ```  
 
-2.2 常用接口：
-web3j本身接口不止以下这些，但并不是所有接口都适用于BTY， 下面列出的是比较常用的接口： 
+2.2 常用接口：  
+web3j本身接口不止以下这些，但并不是所有接口都适用于BTY， 下面列出的是比较常用的接口：  
  - web3.ethGetBalance("地址", DefaultBlockParameterName.LATEST): 获取账户余额
  - Convert.fromWei(balance.toString(), Convert.Unit.ETHER).toString()： 格式化余额（wei-->bty）
  - web3.ethChainId(): 获取chainid
@@ -61,8 +61,7 @@ web3j本身接口不止以下这些，但并不是所有接口都适用于BTY，
 
  注意事项： BTY原来采用的是BTC的地址格式，如果资产在BTC地址格式下， 同样可以通过使用该地址的私钥签名，转给以太坊格式的地址（0x）开头。 
 
- 使用参考：
-
+ 2.3 使用参考： 
  ```  
  /**
  * 通过JAVA代码同BTY区块链交互
