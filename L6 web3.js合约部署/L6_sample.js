@@ -2,7 +2,7 @@ var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.3.158:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.bityuan.com/eth"));
 
 var abi = JSON.parse(fs.readFileSync(path.join(__dirname, "./contract.abi")).toString())
 var bytecode = fs.readFileSync(path.join(__dirname, "./contract.code")).toString()

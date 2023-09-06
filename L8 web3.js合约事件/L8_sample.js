@@ -3,7 +3,7 @@ var Web3 = require('web3');
 var fs = require('fs')
 var path = require('path');
 
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://121.52.224.91:8546"));
 
 var abi = JSON.parse(fs.readFileSync(path.join(__dirname, "../L6 web3.js合约部署/contract.abi")).toString())
 
@@ -34,15 +34,15 @@ const mint = async () => {
   console.log(createReceipt.logs);
 };  
 
-mint();
+// mint();
 
 // 查询合约日志
-// var eventName = 'TokenMinted(uint256,uint256,string)'
-// var topic = web3.eth.abi.encodeEventSignature(eventName);
-// console.log(topic)
-// web3.eth.getPastLogs({
-//     address: contractAddress,
-//     topics: [topic],
-//     fromBlock: 1,
-// })
-// .then(console.log);
+var eventName = 'Transfer(address,address,uint256)'
+var topic = web3.eth.abi.encodeEventSignature(eventName);
+console.log(topic)
+web3.eth.getPastLogs({
+    // address: contractAddress,
+    // topics: [topic],
+    // fromBlock: 1,
+})
+.then(console.log);
