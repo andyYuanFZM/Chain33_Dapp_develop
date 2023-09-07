@@ -4,7 +4,7 @@
 - 去中心化交易系统是实现基于BTY公链的NFT资产交易的系统， 支持用户在平台上创建NFT资产（ERC1155），并且挂卖出售；也支持导入外部的NFT资产（ERC1155和ERC721（比如BTY上的域名）两种形式）到平台上进行挂卖出售。   
 
 ## 技术架构
-参考：
+技术架构：[去中心化平台架构介绍]([http://121.52.224.92:18000/](https://github.com/andyYuanFZM/Chain33_Dapp_develop/blob/main/L18%20%E6%A1%88%E4%BE%8B%E4%BB%8B%E7%BB%8D/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F.md#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84))  
 
 ## 交易合约介绍
 | 合约名称 | 功能介绍 |
